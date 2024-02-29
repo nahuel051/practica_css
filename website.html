@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<style>
+    body{
+        background-color: #040003;
+        font-family: "Rubik", sans-serif;
+    }
+    
+    html {
+    scroll-behavior: smooth;
+}
+
+
+    .header {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Hace que el encabezado sea fijo en la pantalla */
+    top: 0; /* Fija el encabezado en la parte superior de la pantalla */
+    width: 100%; /* Ancho completo */
+    background-color: #040003; /* Color de fondo */
+    z-index: 1000; /* Asegura que el encabezado esté por encima del resto del contenido */
+    margin-bottom: 0px;
+}
+
+    .porfile {
+    display: flex;
+    align-items: center; 
+    }
+
+    .porfile img{
+        width: 50px;
+        border-radius: 50%;
+        margin-left: 15px;
+        margin-top: 15px;
+    }
+
+    .header span{
+        margin-left: 10px;
+        margin-top: 15px;
+        font-size: 20px
+    }
+    .header span:hover{
+        color: #CF003E;
+        text-shadow: 0 0 5px #fff, 0 0 10px #ff4da6, 0 0 15px #ff4da6, 0 0 20px #ff4da6, 0 0 35px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 75px #ff4da6; /* Sombras de texto para el efecto de iluminación LED */
+    }
+    ul{
+        list-style-type: none;
+        display: flex;
+        margin-top: 10px;
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+    li{
+        margin: 0 2px;
+        padding: 10px;
+    }
+    a{
+        text-decoration: none;
+        color: #fff;
+    }
+
+    li:hover{
+        border: 1px solid #CF003E;
+    }
+
+    /* home */
+    .title{
+        font-size: 40px;
+        width: 380px;
+        margin-left: 80px;
+        margin-bottom: 0;
+    }
+
+    .songoku{
+        color: #CF003E;
+    }
+
+    .description{
+        width: 600px;
+        margin-left: 80px;
+        word-spacing: 5px;
+    }
+
+    .ball{
+        margin-left: 80px;
+    }
+
+    .ball img{
+        width: 30px;
+        margin-top: 20px;
+        margin-left: 0;
+        margin-right: 10px;
+    }
+
+    .ball img:hover{
+        filter: drop-shadow(0 0 15px #CF003E);
+        transform: translateY(-10px) scale(2.2);
+        transition: .3s;
+    }
+
+    .home{
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        margin-top: 40px;
+    }
+
+    .goku-home{
+        margin-right: 80px;
+        width: 500px;
+        margin-top: 0px;
+        overflow: hidden;
+    }
+
+    .goku-home img{
+        width: 450px;
+        margin-top: 0px;
+        animation: volar 5s linear infinite; /* Duración y tipo de animación */
+    }
+
+    @keyframes volar {
+        0% {
+    transform: translateX(0) translateY(-50px); /* Punto inicial */
+  }
+  50% {
+    transform: translateX(50px) translateY(0); /* Punto medio */
+  }
+  100% {
+    transform: translateX(0) translateY(-50px); /* Punto final */
+  }
+}
+    /* TRANSFORM */
+    .transform{
+        height: 100vh;
+    }
+
+    .image-transform{
+        margin-left: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .image-transform .blue img{
+        width: 200px;
+        filter: drop-shadow(0 0 15px #02838F);
+        margin-left: 50px;
+        margin-top: 30px;
+    }
+
+    .ssj,
+    .blue,
+    .ultra{
+        position: relative;
+        width: 350px;
+        height: 450px;
+        overflow: hidden; 
+        margin-top: 70px;
+    }
+    .image-transform .ssj img{
+        width: 220px;
+        filter: drop-shadow(0 0 15px #FEF09C);
+        margin-left: 80px;
+        margin-top: 40px;
+    }
+
+    .textssj,
+    .textoblue,
+    .textoultra{
+            position: absolute;
+            top: 0;
+            left: -100%; 
+            padding: 16px;
+            box-sizing: border-box; 
+            transition: transform 0.5s;
+            width: 350px;
+            height: 450px;
+            word-spacing: 5px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5); /* Negro con una opacidad del 50% */
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+    }
+    .ssj:hover .textssj,
+    .blue:hover .textoblue,
+    .ultra:hover .textoultra{
+            transform: translateX(100%);
+        }
+
+    .image-transform .ultra img{
+        width: 330px;
+        filter: drop-shadow(0 0 15px #fff);
+        margin-top: 30px;
+    }
+
+    /* CONTACT */
+    .contact{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }   
+    .guerreros img{
+        width: 400px;
+        height: 402px;
+        margin-top: 5px;
+        border-radius: 30px 0 0 30px;
+    }
+
+    .form_contact{
+        width: 400px;
+        height: 400px;
+        border-radius: 0px 30px 30px 0;
+        border: 1px solid rgba(255, 255, 255, .1);
+        backdrop-filter: blur(25px);
+        background: rgba(255,  255, 255, .1);
+        box-shadow: 0 25px 45px rgba(0, 0, 0, .25);
+        display: flex; 
+        align-items: center; 
+        flex-direction: column; 
+    }
+
+    .form_contact span{
+        color: #CF003E;
+        text-align: center;
+        font-size: 40px;
+        margin-top: 20px;
+    }
+
+    .form_contact span:hover{
+        text-shadow: 0 0 5px #fff, 0 0 10px #ff4da6, 0 0 15px #ff4da6, 0 0 20px #ff4da6, 0 0 35px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 75px #ff4da6; 
+    }
+
+    .form_contact input[type="text"],
+    .form_contact input[type="email"]{
+        background-color: #1E1A1D;
+        height: 30px;
+        width: 240px;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        color: #CF003E;
+        outline: none;
+        margin-bottom: 20px;
+    }
+
+    .form_contact .entry{
+        margin-top: 10px;
+        display: flex; 
+        align-items: center; 
+        flex-direction: column; 
+    }
+    textarea{
+        background-color: #1E1A1D;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        color: #CF003E;
+        outline: none;
+        margin-bottom: 10px;
+
+    }
+
+    .form_contact input[type="text"]::-webkit-input-placeholder, 
+    .form_contact input[type="email"]::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder{
+        color: #fff;
+    }
+
+    .form_contact .entry button{
+        width: 245px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: #CF003E;
+        color: #fff;
+        border-style: none;
+    }
+
+    .form_contact .entry button:hover{
+        background-color: #FF4D6A;
+    }
+</style>
+<body>
+    <div class="header">
+        <div class="porfile">
+            <img src="goku2.jpg" alt="perfil">
+            <span>GOKU</span>
+        </div>
+        <div class="navegador">
+            <ul>
+                <li><a href="#pagina-uno">HOME</a></li>
+                <li><a href="#pagina-dos">TRANSFORM</a></li>
+                <li><a href="#pagina-tres">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+        <div class="home" id="pagina-uno">
+            <div class="home-left">
+            <p class="title">
+                Me llamo <span class="songoku">Son Goku</span> o tambien...
+                Kakarotto
+            </p>
+            <p class="description">
+                Goku es uno de los personajes más icónicos y queridos dentro del mundo del anime y el manga.
+                A lo largo de la serie, Goku enfrenta desafíos épicos y enemigos formidables, mientras desarrolla vínculos profundos con amigos y rivales por igual, incluyendo a su fiel compañero Krilin, su hijo Gohan y su eterno rival, Vegeta.
+                Su insaciable sed de pelea y su habilidad para superar sus propios límites lo convierten en un símbolo de determinación y valentía. 
+            </p>
+            <div class="ball">
+                <img src="uno.png" alt="esfera1">
+                <img src="dos.png" alt="esfera2">
+                <img src="tres.png" alt="esfera3">
+                <img src="cuatro.png" alt="esfera4">
+                <img src="cinco.png" alt="esfera5">
+                <img src="seis.png" alt="esfera6">
+                <img src="siete.png" alt="esfera7">
+            </div>
+        </div>
+            <div class="goku-home">
+                <img src="gokuhome.png" alt="goku-home">
+            </div>
+        </div>
+        <div class="transform" id="pagina-dos">
+            <div class="image-transform">
+                <div class="ssj">
+                    <img src="ssj1.png" alt="ssj1">
+                    <div class="textssj"> <h1>SUPER SAIYAJIN UNO</h1>Goku alcanza la transformación SSJ1 en el apogeo de la batalla contra Freezer en el planeta Namek. En un momento de desesperación y pérdida, su furia y determinación lo llevan a desbloquear este estado legendario, cambiando el curso de la historia y asegurando la victoria para la justicia y la paz.</div>
+                </div>
+                <div class="blue">
+                    <img src="blue.png" alt="blue">
+                    <div class="textoblue">
+                        <h1>SUPER SAIYAJIN BLUE</h1> La primera vez que Goku muestra su forma Super Saiyan Blue en la serie Dragon Ball Super es durante la batalla contra Freezer en la saga de la Resurrección de 'F'. Esta transformación se produce cuando Goku y Vegeta se enfrentan a las fuerzas de Freezer, sorprendiendo a todos con su poder abrumador. La forma Super Saiyan Blue es el resultado de un entrenamiento intenso y el dominio del poder del Super Saiyan God.
+                    </div>
+                </div>
+                <div class="ultra">
+                    <img src="ultra.png" alt="ultra">
+                    <div class="textoultra">
+                        <h1>ULTRA INSTINTO</h1>
+Goku alcanza el Ultra Instinto durante el Torneo del Poder en Dragon Ball Super, un evento que reúne a los luchadores más fuertes de múltiples universos. Esta forma representa el pináculo de la habilidad de combate, permitiendo a Goku reaccionar y moverse sin pensar, desafiando los límites físicos y mentales de su ser.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact" id="pagina-tres">
+            <div class="guerreros">
+                <img src="guerrerosz.jpg" alt="guerreros">
+            </div>
+            <div class="form_contact">
+                <span>Conact Us</span>
+                <div class="entry">
+                <input type="text" placeholder="Nombre">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Mensaje..." cols="30" rows="10"></textarea>
+                <button>Submit</button>
+            </div>
+            </div>
+        </div>
+</body>
+</html>
